@@ -1,0 +1,15 @@
+[Unit]
+Description=GRIP
+After=syslog.target
+
+[Service]
+ExecStart=/home/pi/vision/start_grip.sh
+User=pi
+Restart=always
+KillSignal=SIGQUIT
+Type=simple
+StandardError=syslog
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target
